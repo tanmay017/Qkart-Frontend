@@ -85,7 +85,7 @@ describe('Check UI for Login page component (UI)', () => {
 });
 
 
-describe('Test curl commmand for login', () => {
+describe('Test curl commmand in login.sh for login', () => {
     let curl;
     try {
         curl = fs.readFileSync('login.sh', 'utf8');

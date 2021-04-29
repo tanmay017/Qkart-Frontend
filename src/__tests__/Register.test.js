@@ -133,7 +133,7 @@ describe('Check flow for Register page component (flow)', () => {
     });
 });
 
-describe('Test curl commmand for register', () => {
+describe('Test curl commmand in register.sh for register', () => {
     let curl;
     try {
         curl = fs.readFileSync('register.sh', 'utf8');
