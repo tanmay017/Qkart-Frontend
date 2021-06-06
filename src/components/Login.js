@@ -13,10 +13,10 @@ import Header from "./Header";
  *
  * @property {boolean} state.loading
  *    Indicates background action pending completion. When true, further UI actions might be blocked
- * @property {string}
- *    state.username User given field for username
- * @property {string}
- *    state.password User given field for password
+ * @property {string} state.username 
+ *    User given field for username
+ * @property {string} state.password 
+ *    User given field for password
  */
 class Login extends React.Component {
   constructor() {
