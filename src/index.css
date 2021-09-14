@@ -38,6 +38,7 @@ hr {
   box-sizing: content-box;
   text-align: center;
   border-radius: 4px;
+  border : 1px solid #d1d5da;
   /* TODO: CRIO_TASK_MODULE_UNDERSTANDING_BASICS - Add a border of 1px solid #d1d5da */
 }
 
