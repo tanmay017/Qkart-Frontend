@@ -1,7 +1,7 @@
 import { LockOutlined, UserOutlined } from "@ant-design/icons";
 import { Button, Input, message } from "antd";
 import React from "react";
-import { withRouter, Redirect} from "react-router-dom";
+import { withRouter} from "react-router-dom";
 import { config } from "../App";
 import Footer from "./Footer";
 import Header from "./Header";

@@ -33,8 +33,8 @@ export default class Header extends React.Component {
           <img src="icon.svg" alt="QKart-icon"></img>
         </div>
 
-
-
+        {/* TODO: CRIO_TASK_MODULE_PRODUCTS - Display any child element passed to the component*/}
+          {this.props.children}
         {/* Display links based on if the user's logged in or not */}
         <div className="header-action">
           {localStorage.getItem("username") ? (
