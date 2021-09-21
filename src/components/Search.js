@@ -1,7 +1,8 @@
-import { Input, message} from "antd";
+import { Input, message } from "antd";
 import React from "react";
 import { withRouter } from "react-router-dom";
 import { config } from "../App";
+import Cart from "./Cart";
 import Header from "./Header";
 import Product from "./Product";
 import { Row, Col } from "antd";
@@ -22,6 +23,8 @@ const SearchBar = Input.Search;
  * @class Search component handles the Products list page UI and functionality
  * 
  * Contains the following fields
+ * @property {React.RefObject} cartRef 
+ *    Reference to Cart component (to trigger certain methods within the cart component)
  * @property {number} debounceTimeout 
  *    Holds the return value from setTimeout() for the search bar debouncer
  * @property {Product[]} products 
@@ -38,6 +41,7 @@ class Search extends React.Component {
     super();
     this.debounceTimeout = 0;
     this.products = [];
+    this.cartRef = React.createRef();
     this.state = {
       loading: false,
       loggedIn: false,
@@ -244,7 +248,8 @@ class Search extends React.Component {
           product={product}
           addToCart={() => {
             if (this.state.loggedIn) {
-              message.info("Cart functionality not implemented yet");
+              console.log(this.cartRef);
+              console.log(this.cartRef.current.pushToCart(product._id, 1,true));
             }
             else {
               this.props.history.push('/login');
@@ -273,6 +278,7 @@ class Search extends React.Component {
           {/* Display products */}
           <Col
             xs={{ span: 24 }}
+            sm = {{ span: 18}}
           >
             <div className="search-container ">
               {/* Display each product item wrapped in a Col component */}
@@ -291,8 +297,19 @@ class Search extends React.Component {
           </Col>
 
           {/* Display cart */}
+          {this.state.loggedIn && this.products.length && (
+            <Col
+              xs={{ span: 24 }}
+              sm = {{ span: 6}}
+              className="search-cart"
+            >
+              <div>
+                {/* TODO: CRIO_TASK_MODULE_CART - Add a Cart to the products page */}
+                <Cart history = {this.props.history} token = {localStorage.getItem("token")} products = {this.products} ref = {this.cartRef}/>
+              </div>
+            </Col>
+          )}
         </Row>
-
         {/* Display the footer */}
         <Footer></Footer>
       </>
