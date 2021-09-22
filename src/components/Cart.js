@@ -43,7 +43,7 @@ export default class Cart extends React.Component {
     super();
     this.state = {
       items: [],
-      loading: false,
+      loading: false
     };
   }
   componentDidMount() {
@@ -121,7 +121,7 @@ export default class Cart extends React.Component {
     let response = {};
     let errored = false;
     this.setState({
-      loading: true,
+      loading: true
     });
 
     try {
@@ -138,7 +138,7 @@ export default class Cart extends React.Component {
       errored = true;
     }
     this.setState({
-      loading: false,
+      loading: false
     });
     if (this.validateResponse(errored, response)) {
       console.log(response);
@@ -191,12 +191,12 @@ export default class Cart extends React.Component {
         }
       }
     }
-
+    this.calculateTotal();
     let response = {};
     let errored = false;
     
     this.setState({
-      loading: true,
+      loading: true
     });
 
     try {
@@ -219,7 +219,7 @@ export default class Cart extends React.Component {
     }
 
     this.setState({
-      loading: false,
+      loading: false
     });
 
     if (this.validateResponse(errored, response)) {
