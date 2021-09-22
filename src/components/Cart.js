@@ -141,7 +141,6 @@ export default class Cart extends React.Component {
       loading: false
     });
     if (this.validateResponse(errored, response)) {
-      console.log(response);
       return response;
     }
   };
@@ -191,7 +190,6 @@ export default class Cart extends React.Component {
         }
       }
     }
-    this.calculateTotal();
     let response = {};
     let errored = false;
     
@@ -221,9 +219,8 @@ export default class Cart extends React.Component {
     this.setState({
       loading: false
     });
-
     if (this.validateResponse(errored, response)) {
-      this.refreshCart();
+      await this.refreshCart();
     }
   };
 

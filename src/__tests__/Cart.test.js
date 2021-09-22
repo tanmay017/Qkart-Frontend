@@ -63,15 +63,15 @@ describe("Check UI for Cart component (UI)", () => {
   });
 });
 
-// describe("Check flow for Cart component (flow)", () => {
-//   test("Changing quantity updates the total cost", async () => {
-//     await cartComponent.instance().pushToCart(exampleProduct._id, 10, false);
-//     expect(cartComponent.text()).toContain(exampleProduct.cost * 10);
-//   });
+describe("Check flow for Cart component (flow)", () => {
+  test("Changing quantity updates the total cost", async () => {
+    await cartComponent.instance().pushToCart(exampleProduct._id, 10, false);
+    expect(cartComponent.text()).toContain(exampleProduct.cost * 10);
+  });
 
-//   test("Cart fetch api call changes loading state", () => {
-//     expect(cartComponent.state("loading")).toBe(false);
-//     cartComponent.instance().refreshCart();
-//     expect(cartComponent.state("loading")).toBe(true);
-//   });
-// });
+  test("Cart fetch api call changes loading state", () => {
+    expect(cartComponent.state("loading")).toBe(false);
+    cartComponent.instance().refreshCart();
+    expect(cartComponent.state("loading")).toBe(true);
+  });
+});
