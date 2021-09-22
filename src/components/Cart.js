@@ -143,6 +143,7 @@ export default class Cart extends React.Component {
     if (this.validateResponse(errored, response)) {
       return response;
     }
+
   };
 
   /**
@@ -229,9 +230,13 @@ export default class Cart extends React.Component {
    * -    Call the previously defined getCart() function asynchronously and capture the returned value in a variable
    * -    If the returned value exists,
    *      -   Update items state variable with the response (optionally add the corresponding product object of that item as a sub-field)
+   * -    If the cart is being displayed from the checkout page, or the cart is empty,
+   *      -   Display an error message
+   *      -   Redirect the user to the products listing page
    */
   refreshCart = async () => {
     const cart = await this.getCart();
+    
     if (cart) {
       this.setState({
         items: cart.map((item) => ({
@@ -242,6 +247,8 @@ export default class Cart extends React.Component {
         })),
       });
     }
+
+    // TODO: CRIO_TASK_MODULE_CHECKOUT - If the user visits "/checkout" directly and cart is empty, display an error message and redirect to the "/products" page
   };
 
   /**
@@ -268,6 +275,7 @@ export default class Cart extends React.Component {
    */
 
   // TODO: CRIO_TASK_MODULE_CART - Implement getQuantityElement(). If props.checkout is not set, display a Input field.
+  // TODO: CRIO_TASK_MODULE_CHECKOUT - Update getQuantityElement(). When displayed in the checkout page, display quantity of the item in cart (should be non-editable)
   /**
    * Creates the view for the product quantity added to cart
    *
@@ -284,7 +292,7 @@ export default class Cart extends React.Component {
 
   checkoutClickHandler = () => {
     if(this.state.items.length) {
-      message.info("Checkout functionality not implemented yet");
+      this.props.history.push('/checkout');
     }
     else {
       message.error("You must add items to cart first");

@@ -263,6 +263,7 @@ class Search extends React.Component {
    * JSX and HTML goes here
    * We require a text field as the search (optionally along with a button for submitting the search query)
    * We also iterate over the filteredProducts list and display each product as a component
+   * Display Cart sidebar component if user is logged in
    */
   render() {
     return (
