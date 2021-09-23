@@ -20,7 +20,6 @@ export default function App() {
                 Register
               </Button>
             </Link>
-            {/* TODO: CRIO_TASK_MODULE_UNDERSTANDING_BASICS - Add a Login button */}
             <Link to = "/login">
               <Button id = "login-button" className = "btn-block" type = "primary" block = {true}>
                 Login

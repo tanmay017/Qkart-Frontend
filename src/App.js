@@ -10,7 +10,7 @@ import Thanks from "./components/Thanks";
 import ipConfig from "./ipConfig.json";
 
 export const config = {
-  endpoint: `http://${ipConfig.workspaceIp}:8082/api/v1`,
+  endpoint: `https://tqkart-frontend.herokuapp.com/api/v1`,
 };
 
 export default function App(props) {
@@ -22,9 +22,6 @@ export default function App(props) {
 
   return (
     <div className="App">
-      {/* TODO: CRIO_TASK_MODULE_UNDERSTANDING_BASICS - To add route for /register */}
-
-      {/* TODO: CRIO_TASK_MODULE_UNDERSTANDING_BASICS - To add route for /login */}
       <Switch>
         <Route path="/register">
           <Register />

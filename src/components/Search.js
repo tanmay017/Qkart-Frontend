@@ -146,7 +146,6 @@ class Search extends React.Component {
     }
   };
 
-  // TODO: CRIO_TASK_MODULE_PRODUCTS - Implement the getProducts() method
   /**
    * Function to fetch list of products from backend and update state variable
    * -    Call the previously defined performAPICall() function asynchronously and capture the returned value in a variable
@@ -164,7 +163,6 @@ class Search extends React.Component {
     return data;
   };
 
-  // TODO: CRIO_TASK_MODULE_PRODUCTS - Implement a lifecycle method which uses getProducts() to fetch data and update state if user's logged in, after the component is loaded
   /**
    * Function that runs when component has loaded
    * This is the function that is called when the user lands on the Search/Products page
@@ -184,7 +182,6 @@ class Search extends React.Component {
     }
     console.log(Input.Search);
   }
-  // TODO: CRIO_TASK_MODULE_PRODUCTS - Implement the search() method
   /**
    * Definition for search handler
    * This is the function that is called when the user clicks on the search button or the debounce timer is executed
@@ -211,7 +208,6 @@ class Search extends React.Component {
     return filteredList;
   };
 
-  // TODO: CRIO_TASK_MODULE_PRODUCTS - Implement the debounceSearch() method
   /**
    * Definition for debounce handler
    * This is the function that is called whenever the user types or changes the text in the searchbar field
@@ -233,7 +229,6 @@ class Search extends React.Component {
     this.debounceTimeout = setTimeout(() => {this.search(text)}, 300);
   };
 
-  // TODO: CRIO_TASK_MODULE_PRODUCTS - Implement getProductElement(). If not logged in, clicking on "Add to Cart" should redirect user to the login page
   /**
    * Creates the responsive view for a product item
    *
@@ -270,7 +265,6 @@ class Search extends React.Component {
       <>
         {/* Display Header with Search bar */}
         <Header history={this.props.history}>
-          {/* TODO: CRIO_TASK_MODULE_PRODUCTS - Display search bar in the header for Products page */}
           <SearchBar placeholder="input search text" enterButton onSearch = {this.search} onChange = {this.debounceSearch}/>
         </Header>
 
@@ -305,7 +299,6 @@ class Search extends React.Component {
               className="search-cart"
             >
               <div>
-                {/* TODO: CRIO_TASK_MODULE_CART - Add a Cart to the products page */}
                 <Cart history = {this.props.history} token = {localStorage.getItem("token")} products = {this.products} ref = {this.cartRef}/>
               </div>
             </Col>

@@ -29,7 +29,6 @@ class Login extends React.Component {
   }
 
 
-  // TODO: CRIO_TASK_MODULE_UNDERSTANDING_BASICS - Implement the login() function to display a message, "Login logic not implemented yet"
   /**
    * Definition for login handler
    * This is the function that is called when the user clicks on the login button or submits the login form
@@ -98,7 +97,6 @@ class Login extends React.Component {
     }
   };
 
-  // TODO: CRIO_TASK_MODULE_LOGIN - Validate the input
   /**
    * Validate the input values so that any bad or illegal values are not passed to the backend.
    *

@@ -39,8 +39,7 @@ class Register extends React.Component {
   register = async () => {
     message.info("Register logic not implemented yet");
   }
-  //Incomming Change
-  // TODO: CRIO_TASK_MODULE_LOGIN - Fetch the API response
+  
   /**
    * Perform the API call over the network and return the response
    *
@@ -97,7 +96,6 @@ class Register extends React.Component {
       return data;
   };
 
-  // TODO: CRIO_TASK_MODULE_LOGIN - Implement user input validation logic
   /**
    * Validate the input values so that any bad or illegal values are not passed to the backend.
    *
@@ -141,7 +139,6 @@ class Register extends React.Component {
     return flag;
   };
 
-  // TODO: CRIO_TASK_MODULE_LOGIN - Check API response
   /**
    * Check the response of the API call to be valid and handle any failures along the way
    *
@@ -183,8 +180,6 @@ class Register extends React.Component {
     message.success("Registered Successfully");
     return true;
   };
-
-  // TODO: CRIO_TASK_MODULE_LOGIN - Implement the register function
   /**
    * Definition for register handler
    * This is the function that is called when the user clicks on the register button or submits the register form

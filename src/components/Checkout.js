@@ -323,8 +323,6 @@ class Checkout extends React.Component {
       }
     }
   };
-
-  // TODO: CRIO_TASK_MODULE_CHECKOUT - Implement deleteAddresses() to make DELETE API request to the backend API path "/user/addresses/:userid"
   /**
    * Perform the API call to delete an address for the user
    *
@@ -444,10 +442,6 @@ class Checkout extends React.Component {
     });
 
     if (this.validateResponse(errored, response, "checkout")) {
-        // TODO: CRIO_TASK_MODULE_CHECKOUT - 
-        // 1. Display a order successful message
-        // 2. Update user's balance in localStorage
-        // 3. Redirect to "/thanks" page
         message.success("Order successful!");
         const balance = this.state.balance;
         const totalCost = this.cartRef.current.calculateTotal();
@@ -457,7 +451,6 @@ class Checkout extends React.Component {
     }
   };
 
-  // TODO: CRIO_TASK_MODULE_CHECKOUT - Implement the order() method
   /**
    * Function that is called when the user clicks on the place order button
    * -    If the user's wallet balance is less than the total cost of the user's cart, then display an appropriate error message
@@ -481,8 +474,6 @@ class Checkout extends React.Component {
       await this.checkout();
     }
   };
-
-  // TODO: CRIO_TASK_MODULE_CHECKOUT - Implement the componentDidMount() lifecycle method
   /**
    * Function that runs when component has loaded
    * This is the function that is called when the user lands on the Checkout page
@@ -534,7 +525,6 @@ class Checkout extends React.Component {
         {/* Display Checkout page content */}
         <div className="checkout-container">
           <Row>
-            {/* TODO: CRIO_TASK_MODULE_CHECKOUT - Cart should be shown on top of  Shipping and Pricing blocks in "xs" devices */}
             {/* Display checkout instructions */}
             <Col xs={{ span: 24, order: 2 }} md={{ span: 18, order: 1 }}>
               <div className="checkout-shipping">
@@ -574,7 +564,6 @@ class Checkout extends React.Component {
                                     {address.address}
                                   </div>
 
-                                  {/* TODO: CRIO_TASK_MODULE_CHECKOUT - Clicking on Delete button should call "deleteAddress" function with the correct argument*/}
                                   {/* Display button to delete address from user's list */}
                                   <Button
                                     type="primary"
@@ -653,7 +642,6 @@ class Checkout extends React.Component {
               </div>
             </Col>
 
-            {/* TODO: CRIO_TASK_MODULE_CHECKOUT - Cart should be shown on top of  Shipping and Pricing blocks in "xs" and "sm" devices */}
             {/* Display the cart */}
             <Col xs={{ span: 24 ,order : 1}} md={{span : 6, order : 2}} className="checkout-cart">
               <div>

@@ -125,7 +125,6 @@ export default class Cart extends React.Component {
     });
 
     try {
-      // TODO: CRIO_TASK_MODULE_CART - Pass the OAuth token (check supported props in Cart class documentation) in the fetch API call as an Authorization header
       response = await (
         await fetch(`${config.endpoint}/cart`, {
           method: "GET",
@@ -199,7 +198,6 @@ export default class Cart extends React.Component {
     });
 
     try {
-      // TODO: CRIO_TASK_MODULE_CART - Make an authenticated POST request to "/cart". JSON with properties - productId, qty are to be sent in the request body
       response = await (
         await fetch(`${config.endpoint}/cart`, {
           method : "POST",
@@ -247,8 +245,6 @@ export default class Cart extends React.Component {
         })),
       });
     }
-
-    // TODO: CRIO_TASK_MODULE_CHECKOUT - If the user visits "/checkout" directly and cart is empty, display an error message and redirect to the "/products" page
   };
 
   /**
@@ -267,15 +263,11 @@ export default class Cart extends React.Component {
       : 0;
   };
 
-  // TODO: CRIO_TASK_MODULE_CART - Implement a lifecycle method to populate the Cart when page is loaded
   /**
    * Function that runs when component has loaded
    * This is the function that is called when the page loads the cart component
    * We can call refreshCart() here to get the cart items
    */
-
-  // TODO: CRIO_TASK_MODULE_CART - Implement getQuantityElement(). If props.checkout is not set, display a Input field.
-  // TODO: CRIO_TASK_MODULE_CHECKOUT - Update getQuantityElement(). When displayed in the checkout page, display quantity of the item in cart (should be non-editable)
   /**
    * Creates the view for the product quantity added to cart
    *
